@@ -1,0 +1,8 @@
+.expense-tracker {
+  width: 92%;
+  height: 200px;
+  background-color: #cfc;
+  margin-top: 30px;
+  border-radius: 30px;
+  position: relative;
+}

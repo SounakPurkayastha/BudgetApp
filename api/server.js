@@ -9,8 +9,32 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "ok" });
+app.use(express.json());
+
+const budgets = [];
+
+app.get("/budgets", (req, res) => {
+  res.status(200).json({ budgets: budgets });
+});
+
+app.post("/budgets", (req, res) => {
+  const newBudget = req.body;
+  budgets.push(newBudget);
+  res.status(201).json({ message: "New budget created!" });
+});
+
+app.get("/budgets/:title", (req, res) => {
+  const budgetTitle = req.params.title;
+  const budget = budgets.find(({ title }) => title === budgetTitle);
+  res.status(200).json({ budget: budget });
+});
+
+app.post("/budgets/:title", (req, res) => {
+  const budgetTitle = req.params.title;
+  const budget = budgets.find(({ title }) => title === budgetTitle);
+  budget.expenses.push(req.body);
+  budget.currentExpenditure += parseInt(req.body.price);
+  res.status(200).json({ budget: budget });
 });
 
 app.listen(5000, () => {
