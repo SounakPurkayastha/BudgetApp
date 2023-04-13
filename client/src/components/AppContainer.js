@@ -1,10 +1,14 @@
 import "./AppContainer.css";
 import ExpenseTracker from "./ExpenseTracker";
+import ExpensesList from "./ExpensesList";
 
 const AppContainer = ({ budget }) => {
+  const percentage = (budget.currentExpenditure / budget.expenseLimit) * 100;
+
   return (
     <div className="container">
-      <ExpenseTracker budget={budget} />
+      <ExpenseTracker percentage={percentage} />
+      <ExpensesList expenses={budget.expenses || []} />
     </div>
   );
 };
