@@ -1,0 +1,38 @@
+.expense-card {
+  width: 100%;
+  height: 120px;
+  border-radius: 10px;
+  background-color: #ddf;
+  padding: 5px;
+  position: relative;
+}
+
+.expense-title {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  color: #03a1fc;
+  font-weight: 600;
+  font-size: 34px;
+}
+
+.expense-date {
+  margin: 0;
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  color: #03a1fc;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.expense-price {
+  margin: 0;
+  position: absolute;
+  font-size: 34px;
+  font-weight: 600;
+  color: #03a1fc;
+  top: 50%;
+  right: 3%;
+}

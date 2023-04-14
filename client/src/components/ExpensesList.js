@@ -1,15 +1,13 @@
+import ExpenseCard from "./ExpenseCard";
 import "./ExpensesList.css";
 
 const ExpensesList = ({ expenses }) => {
   return (
-    <div>
-      <button>Add Expense</button>
-      <ul>
-        {expenses.map((expense) => (
-          <li>{expense.title}</li>
-        ))}
-      </ul>
-    </div>
+    <ul className="expenses-list">
+      {expenses.map((expense) => (
+        <ExpenseCard expense={expense} />
+      ))}
+    </ul>
   );
 };
 

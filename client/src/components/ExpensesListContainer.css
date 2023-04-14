@@ -1,0 +1,14 @@
+.expense-button {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  color: #03a1fc;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.expense-button:hover {
+  background-color: #ddf;
+  transition: all linear 100ms;
+  border-radius: 10px;
+}
