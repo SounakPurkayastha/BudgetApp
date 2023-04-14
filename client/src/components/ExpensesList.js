@@ -2,11 +2,14 @@ import "./ExpensesList.css";
 
 const ExpensesList = ({ expenses }) => {
   return (
-    <ul>
-      {expenses.map((expense) => (
-        <li>{expense.title}</li>
-      ))}
-    </ul>
+    <div>
+      <button>Add Expense</button>
+      <ul>
+        {expenses.map((expense) => (
+          <li>{expense.title}</li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

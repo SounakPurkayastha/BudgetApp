@@ -1,8 +1,30 @@
 .expense-tracker {
-  width: 92%;
-  height: 200px;
-  background-color: #cfc;
-  margin: 0 auto;
   border-radius: 30px;
   position: relative;
+}
+
+.budget-title {
+  position: absolute;
+  top: 15px;
+  left: 4%;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.budget-expenditure {
+  position: absolute;
+  top: 44px;
+  left: 4%;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.expenditure-percentage {
+  position: absolute;
+  top: 44px;
+  right: 6%;
+  font-size: 24px;
+  font-weight: 600;
+  color: green;
 }
