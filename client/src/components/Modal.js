@@ -1,23 +1,14 @@
 import "./Modal.css";
 import ReactDOM from "react-dom";
+import ExpenseForm from "./ExpenseForm";
 
 const Modal = ({ open, onClose, onAddExpense }) => {
-  const addExpenseHandler = () => {
-    onAddExpense({
-      title: "Weed",
-      price: "40.00",
-      date: "15-04-2023",
-    });
-    onClose();
-  };
-
   if (!open) return null;
   return ReactDOM.createPortal(
     <>
       <div className="overlay" />
       <div className="modal">
-        <button onClick={onClose}>Close</button>
-        <button onClick={addExpenseHandler}>Add expense</button>
+        <ExpenseForm onAddExpense={onAddExpense} onClose={onClose} />
       </div>
     </>,
     document.getElementById("portal")
