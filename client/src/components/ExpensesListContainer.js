@@ -3,7 +3,7 @@ import Modal from "./Modal";
 import { useState } from "react";
 import "./ExpensesListContainer.css";
 
-const ExpensesListContainer = ({ expenses }) => {
+const ExpensesListContainer = ({ expenses, onAddExpense }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => setIsOpen(false);
@@ -15,7 +15,7 @@ const ExpensesListContainer = ({ expenses }) => {
       <button className="expense-button" onClick={openModal}>
         + Add New Expense
       </button>
-      <Modal open={isOpen} onClose={closeModal} />
+      <Modal open={isOpen} onClose={closeModal} onAddExpense={onAddExpense} />
       <ExpensesList expenses={expenses} />
     </div>
   );

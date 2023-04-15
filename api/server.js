@@ -34,7 +34,7 @@ app.post("/budgets/:title", (req, res) => {
   const budget = budgets.find(({ title }) => title === budgetTitle);
   budget.expenses.push(req.body);
   budget.currentExpenditure += parseInt(req.body.price);
-  res.status(200).json({ budget: budget });
+  res.status(200).json(req.body);
 });
 
 app.listen(5000, () => {

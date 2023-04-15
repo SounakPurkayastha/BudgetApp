@@ -10,9 +10,27 @@ function App() {
       .then((data) => setBudget(data));
   }, []);
 
+  const addExpense = (expense) => {
+    fetch("http://localhost:5000/budgets/Concert", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(expense),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setBudget((budget) => {
+          const newBudget = { ...budget };
+          newBudget.expenses.push(data);
+          return newBudget;
+        });
+      });
+  };
+
   return (
     <div className="App">
-      <AppContainer budget={budget} />
+      <AppContainer budget={budget} onAddExpense={addExpense} />
     </div>
   );
 }
