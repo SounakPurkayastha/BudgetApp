@@ -23,6 +23,7 @@ function App() {
         setBudget((budget) => {
           const newBudget = { ...budget };
           newBudget.expenses.push(data);
+          newBudget.currentExpenditure += parseInt(data.price);
           return newBudget;
         });
       });
