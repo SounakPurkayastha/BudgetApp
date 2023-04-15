@@ -5,12 +5,9 @@ function App() {
   const [budget, setBudget] = useState({});
 
   useEffect(() => {
-    fetch("http://localhost:5000/budgets/Project")
+    fetch("http://localhost:5000/budgets/Concert")
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setBudget(data.budget);
-      });
+      .then((data) => setBudget(data.budget));
   }, []);
 
   return (

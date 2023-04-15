@@ -2,10 +2,10 @@ import "./ExpenseCard.css";
 
 const ExpenseCard = ({ expense }) => {
   return (
-    <div class="expense-card">
-      <p class="expense-title">{expense.title}</p>
-      <p class="expense-date">{expense.date}</p>
-      <p class="expense-price">${expense.price}</p>
+    <div className="expense-card">
+      <p className="expense-title">{expense.title}</p>
+      <p className="expense-date">{expense.date}</p>
+      <p className="expense-price">${expense.price}</p>
     </div>
   );
 };

@@ -4,8 +4,8 @@ import "./ExpensesList.css";
 const ExpensesList = ({ expenses }) => {
   return (
     <ul className="expenses-list">
-      {expenses.map((expense) => (
-        <ExpenseCard expense={expense} />
+      {expenses.map((expense, i) => (
+        <ExpenseCard expense={expense} key={i} />
       ))}
     </ul>
   );
