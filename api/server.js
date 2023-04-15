@@ -26,7 +26,7 @@ app.post("/budgets", (req, res) => {
 app.get("/budgets/:title", (req, res) => {
   const budgetTitle = req.params.title;
   const budget = budgets.find(({ title }) => title === budgetTitle);
-  res.status(200).json({ budget: budget });
+  res.status(200).json(budget);
 });
 
 app.post("/budgets/:title", (req, res) => {

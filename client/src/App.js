@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:5000/budgets/Concert")
       .then((res) => res.json())
-      .then((data) => setBudget(data.budget));
+      .then((data) => setBudget(data));
   }, []);
 
   return (
